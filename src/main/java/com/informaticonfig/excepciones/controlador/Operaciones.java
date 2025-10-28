@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class Operaciones {
 
     @GetMapping
-    public String Divide(){
-        int valor = 5/5;
+    public String Divide() {
+        int valor = 1;
         return "resultado: " + valor;
     }
 

@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ManejoErrores {
 
     @ExceptionHandler(ArithmeticException.class)
-    public ResponseEntity<String> handlerArithmeticException(ArithmeticException ERROR){
-        return new ResponseEntity<>("Error: division entre cero no permitida",
-                HttpStatus.BAD_REQUEST);
+    public ResponseEntity<String> handlerArithmeticException(ArithmeticException ERROR) {
+        return new ResponseEntity<>("Error: division entre cero no permitida", HttpStatus.BAD_REQUEST);
     }
 
 }
