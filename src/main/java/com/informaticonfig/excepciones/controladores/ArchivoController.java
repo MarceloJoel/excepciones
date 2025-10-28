@@ -14,16 +14,16 @@ public class ArchivoController {
 
     private final FileContent v_contenido;
 
-    public ArchivoController(FileContent contenido){
+    public ArchivoController(FileContent contenido) {
         this.v_contenido = contenido;
     }
 
     @GetMapping("/lectura")
-    public ResponseEntity<String> lectura(@RequestParam String ruta){
-        try{
+    public ResponseEntity<String> lectura(@RequestParam String ruta) {
+        try {
             String elArchivo = v_contenido.Lecturaarchivo(ruta);
             return ResponseEntity.ok(elArchivo);
-        }catch(RuntimeException ERROR){
+        } catch (RuntimeException ERROR) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en la lectura de archivo" + ERROR);
         }
     }
